@@ -561,12 +561,12 @@ def createWebApplication(combined_df_inds, combined_df_nations) :
 #Retrive the file paths
 mt_mut_file, mt_basal_file, y_snp_file, y_locus_file, y_basal_file, anno_file, bin_choice = boot()
 
-mt_mut_file = "/home/andrewbergman/courses/binp29/pop_gen/mt_mutation"
-mt_basal_file = "/home/andrewbergman/courses/binp29/pop_gen/mt_phylo"
-y_snp_file = "/home/andrewbergman/courses/binp29/pop_gen/y_snp"
-y_locus_file = "/home/andrewbergman/courses/binp29/pop_gen/y_locus"
-y_basal_file = "/home/andrewbergman/courses/binp29/pop_gen/y_phylo"
-anno_file = "/home/andrewbergman/courses/binp29/pop_gen/anno_file"
+mt_mut_file = "./data/mt_mutation"
+mt_basal_file = "./data/mt_phylo"
+y_snp_file = "./data/y_snp"
+y_locus_file = "./data/y_locus"
+y_basal_file = "./data/y_phylo"
+anno_file = "./data/anno_file"
 
 # Calling functions
 y_df, mt_df = open_data(anno_file)
