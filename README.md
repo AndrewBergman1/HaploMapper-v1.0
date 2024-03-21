@@ -16,7 +16,17 @@ HaploMapper provides a graphical interface for you to explore the distribution o
 
 HaploMapper is run as follows: `python HaploMapper.py`
 
-HaploMapper is coded in Python 3.10.12
+HaploMapper is coded in Python 3.10.12  
+
+HaploMapper launches an internal HTML website, you can interact with it as follows: 
+- Click and drag to rotate the globe.
+- Zoom in and out using the scroll wheel. 
+- Single-click the map- or pie chart legend to deselect entries from the map and the pie charts, respectively (color-coded).
+- Double-click on a legend entry to deselect all other entries except the one that is double-clicked. Double-clicking on a legend entry again re-selects all legend entries.
+- By clicking the camera-icon in the top-right corner of any plot (map or individual pie charts), you save the plot in .png format. 
+- You can reset the map by clicking the reset button in the top right corner. 
+- You can select a geogrpahical region of interest and solely display the samples present there by using the lasso- or box-select options in the top-right corner.  
+
 
 ## Dependencies
 
