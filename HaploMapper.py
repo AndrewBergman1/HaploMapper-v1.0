@@ -24,24 +24,26 @@ def boot():
     output: File paths.
 
     '''
-
+    print("#######################################################################################################")
+    print("")
     print("Welcome to HaploMapper! Before you continue, ensure that you have downloaded the files from the ReadMe.")
-    
-    mt_snp_file = input("Provide the path to mitochondrial SNP file (e.g., /path/to/mtSNP.csv): ")
-    mt_basal_file = input("Provide the path to the mitochondrial haplogroup phylogeny file (e.g., /path/to/mtPhylo.csv): ")
-    y_snp_file = input("Provide the path to yDNA SNP file (e.g., /path/to/ySNP.csv): ")
-    y_locus_file = input("Provide the path to the locus file (e.g., /path/to/locusFile.csv): ")
-    y_basal_file = input("Provide the path to the yDNA haplogroup phylogeny file (e.g., /path/to/yPhylo.csv): ")
-    anno_file = input("Provide the path to the annotation file (e.g., /path/to/anno.csv): ")
+    print("")
+    print("#######################################################################################################")
+
+    mt_mut_file = "./data/mt_mutation"
+    mt_basal_file = "./data/mt_phylo"
+    y_snp_file = "./data/y_snp"
+    y_locus_file = "./data/y_locus"
+    y_basal_file = "./data/y_phylo"
+    anno_file = "./data/anno_file"
     bin_choice = input("Enter the time resolution of interest (e.g., 100 -> 100 year resolution on map, 1000 -> 1000 year resolution on map): ")
 
     # Optionally, validate that each provided path exists and is a file
-    for file_path in (mt_snp_file, mt_basal_file, y_snp_file, y_locus_file, y_basal_file, anno_file):
+    for file_path in (mt_mut_file, mt_basal_file, y_snp_file, y_locus_file, y_basal_file, anno_file):
         if not os.path.isfile(file_path):
             print(f"Error: The provided path does not exist or is not a file: {file_path}")
-            return "", "", "", "", "", "", int(bin_choice) #CHANGE TO NONE WHEN HANDING IN!!! 
-
-    return mt_snp_file, mt_basal_file, y_snp_file, y_locus_file, y_basal_file, anno_file, int(bin_choice)
+            return None
+    return mt_mut_file, mt_basal_file, y_snp_file, y_locus_file, y_basal_file, anno_file, int(bin_choice)
 
 def open_data(anno_file) :
 
@@ -561,12 +563,7 @@ def createWebApplication(combined_df_inds, combined_df_nations) :
 #Retrive the file paths
 mt_mut_file, mt_basal_file, y_snp_file, y_locus_file, y_basal_file, anno_file, bin_choice = boot()
 
-mt_mut_file = "./data/mt_mutation"
-mt_basal_file = "./data/mt_phylo"
-y_snp_file = "./data/y_snp"
-y_locus_file = "./data/y_locus"
-y_basal_file = "./data/y_phylo"
-anno_file = "./data/anno_file"
+
 
 # Calling functions
 y_df, mt_df = open_data(anno_file)
